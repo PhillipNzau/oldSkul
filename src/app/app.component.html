@@ -1,6 +1,10 @@
 <section class="flex items-center justify-center w-screen h-screen px-4">
   <!-- Contact Form -->
-  <form class="flex flex-col gap-2.5 md:w-auto w-full">
+  <form
+    [formGroup]="form"
+    (ngSubmit)="onSubmit()"
+    class="flex flex-col gap-2.5 md:w-auto w-full"
+  >
     <p class="text-blue-900 font-bold uppercase text-center text-4xl mb-6">
       Toba
     </p>
@@ -8,14 +12,14 @@
     <input
       class="bg-gray-50 text-slate-600 rounded-lg py-3 px-2 text-base"
       type="text"
-      name="fullName"
+      formControlName="name"
       id="fullName"
       placeholder="Full name"
     />
     <input
       class="bg-gray-50 text-slate-600 rounded-lg py-3 px-2 text-base"
       type="text"
-      name="class"
+      formControlName="className"
       id="class"
       placeholder="Class"
     />
@@ -23,7 +27,7 @@
     <input
       class="bg-gray-50 text-slate-600 rounded-lg py-3 px-2 text-base"
       type="text"
-      name="number"
+      formControlName="number"
       id="number"
       placeholder="Phone Number"
     />
@@ -31,12 +35,13 @@
     <input
       class="bg-gray-50 text-slate-600 rounded-lg py-3 px-2 text-base"
       type="text"
-      name="contribution"
+      formControlName="annualContribution"
       id="contribution"
       placeholder="Annual Membership"
     />
 
     <button
+      type="submit"
       class="w-full bg-blue-900 rounded-full text-white py-4 mt-2 md:mt-6"
     >
       Submit
