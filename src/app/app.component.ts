@@ -39,7 +39,8 @@ export class AppComponent implements OnInit {
       Class: ${form.className}
       Annual Contribution: ${form.annualContribution}
     `;
-    const mailtoUrl = `mailto:nzau78@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    const recipients ='athmanabubaker@yahoo.com, Mnkoja@gmail.com '
+    const mailtoUrl = `mailto:${recipients}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
     window.location.href = mailtoUrl;
   }
 }
